@@ -1,0 +1,6 @@
+# To include in your current shell.
+
+change_font() { rm font.ttf ; ln -s $1 font.ttf ; }
+change_shader() { rm shader.fs ; ln -s $1 shader.fs ; }
+
+export TERM=xterm-256color
