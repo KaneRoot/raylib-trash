@@ -1,8 +1,10 @@
 CC=zigcc
 
+SRC ?= main
+
 PKGS=raylib
 CFLAGS=-Wall -Wextra -ggdb -pedantic -std=c11 `pkg-config --cflags --static $(PKGS)`
 LIBS=`pkg-config --libs --static $(PKGS)`
 
-main: main.c
-	$(CC) $(CFLAGS) -o main main.c $(LIBS)
+$(SRC): $(SRC).c
+	$(CC) $(CFLAGS) -o $(SRC) $(SRC).c $(LIBS)
