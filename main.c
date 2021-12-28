@@ -71,6 +71,15 @@ Shader reload_shader(
 
 int main(void)
 {
+
+	SetTraceLogLevel(LOG_WARNING);
+	SetConfigFlags(
+		  FLAG_WINDOW_UNDECORATED
+		| FLAG_WINDOW_UNFOCUSED
+		| FLAG_WINDOW_TOPMOST
+		| FLAG_WINDOW_TRANSPARENT
+		// | FLAG_MSAA_4X_HINT
+		);
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Magnificient test.");
 
 	Texture2D pog = LoadTexture(FILE_TEXTURE);
@@ -146,7 +155,7 @@ int main(void)
 		pog_position = Vector2Add(pog_position, pog_velocity);
 
 		BeginDrawing();
-			ClearBackground(BLACK);
+			ClearBackground(BLANK);
 			DrawFPS(600,20);
 
 			BeginShaderMode(shader);
